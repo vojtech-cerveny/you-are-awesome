@@ -10,12 +10,9 @@ import { Checkbox } from "@/components/ui/checkbox";
 // import { Metadata } from "next";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
+import { Suspense } from "react";
 
-// export const metadata: Metadata = {
-//   title: "You can be!",
-//   description: "Your path to be the best QA is ready!",
-// };
-export function StatCheckbox({
+function StatCheckbox({
   label,
   message,
   id,
@@ -47,7 +44,7 @@ export function StatCheckbox({
   );
 }
 
-export default function YourStatsPage() {
+function YourStatsPage() {
   const searchParams = useSearchParams();
 
   const name = searchParams.get("name");
@@ -123,5 +120,13 @@ export default function YourStatsPage() {
         </CardContent>
       </Card>
     </div>
+  );
+}
+
+export default function Page() {
+  return (
+    <Suspense>
+      <YourStatsPage />
+    </Suspense>
   );
 }
