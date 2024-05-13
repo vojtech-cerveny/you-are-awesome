@@ -114,6 +114,10 @@ function YourStatsPage() {
               <div className="text-xl font-bold bg-green-300 p-4 rounded-md mt-8">
                 <div className="text-4xl mb-2">🎉</div>{" "}
                 <span>You are on the right path to be the best QA!</span>
+                <img
+                  src="https://i.giphy.com/oGO1MPNUVbbk4.webp"
+                  alt="You are the best QA"
+                />
               </div>
             )}
           </div>
