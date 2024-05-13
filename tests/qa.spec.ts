@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test.describe("QA page", () => {
   // FILL YOUR NAME HERE TO RUN THE TESTS
   const yourName = "replace_this_your_name";
-
+  const timeout = 4000;
   test.beforeEach(async ({ page }) => {
     await page.goto("http://localhost:3000");
   });
@@ -26,15 +26,15 @@ test.describe("QA page", () => {
 
     // check your stats
     await page.locator("#input1").check();
-    await page.waitForTimeout(2000);
+    await page.waitForTimeout(timeout);
     await page.locator("#input2").check();
-    await page.waitForTimeout(2000);
+    await page.waitForTimeout(timeout);
     await page.locator("#input3").check();
-    await page.waitForTimeout(2000);
+    await page.waitForTimeout(timeout);
     await page.locator("#input4").check();
-    await page.waitForTimeout(2000);
+    await page.waitForTimeout(timeout);
     await page.locator("#input5").check();
-    await page.waitForTimeout(2000);
+    await page.waitForTimeout(timeout);
     await page.locator("#input6").check();
 
     // check the result
@@ -42,10 +42,13 @@ test.describe("QA page", () => {
     // 😅 Hehe, you need to run test to see the result :)
     await expect(
       page.getByText(
-        atob("WW91IGFyZSBvbiB0aGUgcmlnaHQgcGF0aCB0byBiZSB0aGUgYmVzdCBRQSE="),
-      ),
+        atob("WW91IGFyZSBvbiB0aGUgcmlnaHQgcGF0aCB0byBiZSB0aGUgYmVzdCBRQSE=")
+      )
     ).toBeVisible();
 
-    await page.waitForTimeout(6000);
+    await page.waitForTimeout(500);
+    await page.locator("#scrollLol").scrollIntoViewIfNeeded();
+    await expect(page.getByAltText("Thumb up")).toBeVisible();
+    await page.waitForTimeout(timeout * 2);
   });
 });

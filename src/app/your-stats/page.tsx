@@ -116,8 +116,10 @@ function YourStatsPage() {
                 <span>You are on the right path to be the best QA!</span>
                 <img
                   src="https://i.giphy.com/oGO1MPNUVbbk4.webp"
-                  alt="You are the best QA"
+                  alt="Thumb up"
+                  className="w-full mt-4 rounded-md"
                 />
+                <div id="scrollLol"></div>
               </div>
             )}
           </div>
