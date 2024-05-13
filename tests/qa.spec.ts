@@ -1,5 +1,7 @@
 import { test, expect } from "@playwright/test";
 
+test.use({ userAgent: 'Playwright' });
+
 test.describe("QA page", () => {
   // FILL YOUR NAME HERE TO RUN THE TESTS
   const yourName = "replace_this_your_name";
