@@ -42,8 +42,8 @@ test.describe("QA page", () => {
     // 😅 Hehe, you need to run test to see the result :)
     await expect(
       page.getByText(
-        atob("WW91IGFyZSBvbiB0aGUgcmlnaHQgcGF0aCB0byBiZSB0aGUgYmVzdCBRQSE=")
-      )
+        atob("WW91IGFyZSBvbiB0aGUgcmlnaHQgcGF0aCB0byBiZSB0aGUgYmVzdCBRQSE="),
+      ),
     ).toBeVisible();
 
     await page.waitForTimeout(6000);
